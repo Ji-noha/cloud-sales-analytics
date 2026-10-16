@@ -1,0 +1,131 @@
+[2026-10-07T14:46:45.925+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-10-07T14:46:45.942+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: olist_bigquery_pipeline.build_dbt manual__2026-10-07T12:59:58.100904+00:00 [queued]>
+[2026-10-07T14:46:45.950+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: olist_bigquery_pipeline.build_dbt manual__2026-10-07T12:59:58.100904+00:00 [queued]>
+[2026-10-07T14:46:45.951+0000] {taskinstance.py:2866} INFO - Starting attempt 4 of 4
+[2026-10-07T14:46:45.961+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): build_dbt> on 2026-10-07 12:59:58.100904+00:00
+[2026-10-07T14:46:45.970+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=192) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-10-07T14:46:45.973+0000] {standard_task_runner.py:72} INFO - Started process 194 to run task
+[2026-10-07T14:46:45.972+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'olist_bigquery_pipeline', 'build_dbt', 'manual__2026-10-07T12:59:58.100904+00:00', '--job-id', '316', '--raw', '--subdir', 'DAGS_FOLDER/olist_bigquery_pipeline.py', '--cfg-path', '/tmp/tmp1ity7oby']
+[2026-10-07T14:46:45.975+0000] {standard_task_runner.py:105} INFO - Job 316: Subtask build_dbt
+[2026-10-07T14:46:46.026+0000] {task_command.py:467} INFO - Running <TaskInstance: olist_bigquery_pipeline.build_dbt manual__2026-10-07T12:59:58.100904+00:00 [running]> on host b82a76aa1674
+[2026-10-07T14:46:46.115+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='olist_bigquery_pipeline' AIRFLOW_CTX_TASK_ID='build_dbt' AIRFLOW_CTX_EXECUTION_DATE='2026-10-07T12:59:58.100904+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-07T12:59:58.100904+00:00'
+[2026-10-07T14:46:46.116+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-10-07T14:46:46.119+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-10-07T14:46:46.120+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/airflow/dbt/olist_analytics && dbt build --exclude fact_sales ']
+[2026-10-07T14:46:46.130+0000] {subprocess.py:99} INFO - Output:
+[2026-10-07T14:46:48.076+0000] {subprocess.py:106} INFO - [0m14:46:48  Running with dbt=1.12.5
+[2026-10-07T14:46:48.472+0000] {subprocess.py:106} INFO - /home/airflow/.local/lib/python3.12/site-packages/google/api_core/_python_package_support.py:206: FutureWarning: Package google.api_core depends on grpcio, currently installed at version 1.68.1. grpcio < 1.83.0 does not support Post-Quantum Cryptography (PQC). Support for non-PQC environments is deprecated. In April 2027, Google Cloud Python packages will raise their minimum requirements (including google-api-core, grpcio, and grpcio-status) to enforce grpcio >= 1.83.0. For more details on Google Cloud's post-quantum security migration, visit: https://cloud.google.com/security/resources/post-quantum-cryptography
+[2026-10-07T14:46:48.473+0000] {subprocess.py:106} INFO -   warnings.warn(
+[2026-10-07T14:46:48.525+0000] {subprocess.py:106} INFO - /home/airflow/.local/lib/python3.12/site-packages/google/auth/transport/grpc.py:43: FutureWarning: grpcio < 1.83.0 does not support Post-Quantum Cryptography (PQC). Support for non-PQC environments is deprecated. In April 2027, google-auth will raise its minimum requirements to enforce grpcio >= 1.83.0. For more details on Google Cloud's post-quantum security migration, visit: https://cloud.google.com/security/resources/post-quantum-cryptography
+[2026-10-07T14:46:48.526+0000] {subprocess.py:106} INFO -   warnings.warn(
+[2026-10-07T14:46:49.246+0000] {subprocess.py:106} INFO - /home/airflow/.local/lib/python3.12/site-packages/google/api_core/_python_package_support.py:206: FutureWarning: Package google.cloud.dataproc_v1 depends on grpcio, currently installed at version 1.68.1. grpcio < 1.83.0 does not support Post-Quantum Cryptography (PQC). Support for non-PQC environments is deprecated. In April 2027, Google Cloud Python packages will raise their minimum requirements (including google-api-core, grpcio, and grpcio-status) to enforce grpcio >= 1.83.0. For more details on Google Cloud's post-quantum security migration, visit: https://cloud.google.com/security/resources/post-quantum-cryptography
+[2026-10-07T14:46:49.247+0000] {subprocess.py:106} INFO -   warnings.warn(
+[2026-10-07T14:46:49.539+0000] {subprocess.py:106} INFO - [0m14:46:49  Registered adapter: bigquery=1.12.1
+[2026-10-07T14:46:50.174+0000] {subprocess.py:106} INFO - [0m14:46:50  [[31mERROR[0m]: Encountered an error:
+[2026-10-07T14:46:50.175+0000] {subprocess.py:106} INFO - 'dbt_bigquery://macros/metadata.sql'
+[2026-10-07T14:46:50.176+0000] {subprocess.py:106} INFO - [0m14:46:50  Traceback (most recent call last):
+[2026-10-07T14:46:50.176+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 198, in wrapper
+[2026-10-07T14:46:50.177+0000] {subprocess.py:106} INFO -     result, success = func(*args, **kwargs)
+[2026-10-07T14:46:50.177+0000] {subprocess.py:106} INFO -                       ^^^^^^^^^^^^^^^^^^^^^
+[2026-10-07T14:46:50.178+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 144, in wrapper
+[2026-10-07T14:46:50.178+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2026-10-07T14:46:50.178+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2026-10-07T14:46:50.179+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 295, in wrapper
+[2026-10-07T14:46:50.179+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2026-10-07T14:46:50.180+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2026-10-07T14:46:50.180+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 340, in wrapper
+[2026-10-07T14:46:50.181+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2026-10-07T14:46:50.181+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2026-10-07T14:46:50.182+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 387, in wrapper
+[2026-10-07T14:46:50.182+0000] {subprocess.py:106} INFO -     return func(*args, **kwargs)
+[2026-10-07T14:46:50.183+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2026-10-07T14:46:50.183+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 403, in wrapper
+[2026-10-07T14:46:50.183+0000] {subprocess.py:106} INFO -     setup_manifest(ctx, write=write, write_perf_info=write_perf_info)
+[2026-10-07T14:46:50.184+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/cli/requires.py", line 480, in setup_manifest
+[2026-10-07T14:46:50.184+0000] {subprocess.py:106} INFO -     ctx.obj["manifest"] = parse_manifest(
+[2026-10-07T14:46:50.185+0000] {subprocess.py:106} INFO -                           ^^^^^^^^^^^^^^^
+[2026-10-07T14:46:50.185+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 2662, in parse_manifest
+[2026-10-07T14:46:50.185+0000] {subprocess.py:106} INFO -     manifest = ManifestLoader.get_full_manifest(
+[2026-10-07T14:46:50.185+0000] {subprocess.py:106} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-10-07T14:46:50.186+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 360, in get_full_manifest
+[2026-10-07T14:46:50.186+0000] {subprocess.py:106} INFO -     manifest = loader.load()
+[2026-10-07T14:46:50.186+0000] {subprocess.py:106} INFO -                ^^^^^^^^^^^^^
+[2026-10-07T14:46:50.187+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 433, in load
+[2026-10-07T14:46:50.187+0000] {subprocess.py:106} INFO -     self.load_and_parse_macros(project_parser_files)
+[2026-10-07T14:46:50.187+0000] {subprocess.py:106} INFO -   File "/home/airflow/.local/lib/python3.12/site-packages/dbt/parser/manifest.py", line 852, in load_and_parse_macros
+[2026-10-07T14:46:50.187+0000] {subprocess.py:106} INFO -     block = FileBlock(self.manifest.files[file_id])
+[2026-10-07T14:46:50.188+0000] {subprocess.py:106} INFO -                       ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+[2026-10-07T14:46:50.188+0000] {subprocess.py:106} INFO - KeyError: 'dbt_bigquery://macros/metadata.sql'
+[2026-10-07T14:46:50.189+0000] {subprocess.py:106} INFO - 
+[2026-10-07T14:46:55.134+0000] {subprocess.py:110} INFO - Command exited with return code 2
+[2026-10-07T14:46:55.145+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2026-10-07T14:46:55.149+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=olist_bigquery_pipeline, task_id=build_dbt, run_id=manual__2026-10-07T12:59:58.100904+00:00, execution_date=20261007T125958, start_date=20261007T144645, end_date=20261007T144655
+[2026-10-07T14:46:55.161+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-10-07T14:46:55.162+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 316 for task build_dbt (Bash command failed. The command returned a non-zero exit code 2.; 194)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2026-10-07T14:46:55.174+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-10-07T14:46:55.187+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-10-07T14:46:55.190+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

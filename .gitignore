@@ -1,8 +1,26 @@
-.venv/
-logs/
+# md files
 learn.md
 script.py
-.env
 resume.md
 commands.md
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment and credentials
+.env
+.env.*
+!.env.example
+*.json
 secrets/
+
+# dbt
+dbt/logs/
+dbt/target/
+dbt/dbt_packages/
+
+# Local data
+data/raw/

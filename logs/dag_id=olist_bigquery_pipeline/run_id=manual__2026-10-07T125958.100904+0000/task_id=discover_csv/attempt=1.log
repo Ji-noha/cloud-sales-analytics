@@ -1,0 +1,18 @@
+[2026-10-07T13:00:00.197+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-10-07T13:00:00.219+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: olist_bigquery_pipeline.discover_csv manual__2026-10-07T12:59:58.100904+00:00 [queued]>
+[2026-10-07T13:00:00.229+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: olist_bigquery_pipeline.discover_csv manual__2026-10-07T12:59:58.100904+00:00 [queued]>
+[2026-10-07T13:00:00.230+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 1
+[2026-10-07T13:00:00.246+0000] {taskinstance.py:2889} INFO - Executing <Task(_PythonDecoratedOperator): discover_csv> on 2026-10-07 12:59:58.100904+00:00
+[2026-10-07T13:00:00.257+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=288) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-10-07T13:00:00.260+0000] {standard_task_runner.py:72} INFO - Started process 298 to run task
+[2026-10-07T13:00:00.256+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'olist_bigquery_pipeline', 'discover_csv', 'manual__2026-10-07T12:59:58.100904+00:00', '--job-id', '302', '--raw', '--subdir', 'DAGS_FOLDER/olist_bigquery_pipeline.py', '--cfg-path', '/tmp/tmpygld8w31']
+[2026-10-07T13:00:00.261+0000] {standard_task_runner.py:105} INFO - Job 302: Subtask discover_csv
+[2026-10-07T13:00:00.347+0000] {task_command.py:467} INFO - Running <TaskInstance: olist_bigquery_pipeline.discover_csv manual__2026-10-07T12:59:58.100904+00:00 [running]> on host 59600834a790
+[2026-10-07T13:00:00.456+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='olist_bigquery_pipeline' AIRFLOW_CTX_TASK_ID='discover_csv' AIRFLOW_CTX_EXECUTION_DATE='2026-10-07T12:59:58.100904+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-07T12:59:58.100904+00:00'
+[2026-10-07T13:00:00.458+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-10-07T13:00:00.465+0000] {python.py:240} INFO - Done. Returned value was: [{'file': 'olist_customers_dataset.csv', 'table': 'raw_customers'}, {'file': 'olist_geolocation_dataset.csv', 'table': 'raw_geolocation'}, {'file': 'olist_orders_dataset.csv', 'table': 'raw_orders'}, {'file': 'olist_order_items_dataset.csv', 'table': 'raw_order_items'}, {'file': 'olist_order_payments_dataset.csv', 'table': 'raw_order_payments'}, {'file': 'olist_order_reviews_dataset.csv', 'table': 'raw_order_reviews'}, {'file': 'olist_products_dataset.csv', 'table': 'raw_products'}, {'file': 'olist_sellers_dataset.csv', 'table': 'raw_sellers'}]
+[2026-10-07T13:00:00.504+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-10-07T13:00:00.505+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=olist_bigquery_pipeline, task_id=discover_csv, run_id=manual__2026-10-07T12:59:58.100904+00:00, execution_date=20261007T125958, start_date=20261007T130000, end_date=20261007T130000
+[2026-10-07T13:00:00.557+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-10-07T13:00:00.659+0000] {taskinstance.py:3895} INFO - 8 downstream tasks scheduled from follow-on schedule check
+[2026-10-07T13:00:00.662+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

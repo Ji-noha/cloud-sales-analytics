@@ -1,0 +1,32 @@
+[2026-10-07T12:59:51.237+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-10-07T12:59:51.258+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.dim_date scheduled__2026-10-06T02:00:00+00:00 [queued]>
+[2026-10-07T12:59:51.269+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.dim_date scheduled__2026-10-06T02:00:00+00:00 [queued]>
+[2026-10-07T12:59:51.270+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 3
+[2026-10-07T12:59:51.287+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): dim_date> on 2026-10-06 02:00:00+00:00
+[2026-10-07T12:59:51.298+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'etl_pipeline', 'dim_date', 'scheduled__2026-10-06T02:00:00+00:00', '--job-id', '297', '--raw', '--subdir', 'DAGS_FOLDER/sales_etl_dag.py', '--cfg-path', '/tmp/tmpyab2a4im']
+[2026-10-07T12:59:51.302+0000] {standard_task_runner.py:105} INFO - Job 297: Subtask dim_date
+[2026-10-07T12:59:51.303+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=239) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-10-07T12:59:51.310+0000] {standard_task_runner.py:72} INFO - Started process 240 to run task
+[2026-10-07T12:59:51.367+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.dim_date scheduled__2026-10-06T02:00:00+00:00 [running]> on host 59600834a790
+[2026-10-07T12:59:51.476+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='dim_date' AIRFLOW_CTX_EXECUTION_DATE='2026-10-06T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-10-06T02:00:00+00:00'
+[2026-10-07T12:59:51.478+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2026-10-07T12:59:51.497+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-10-07T12:59:51.498+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'PYTHONPATH=/opt/airflow/src python -m warehouse.dim_date']
+[2026-10-07T12:59:51.509+0000] {subprocess.py:99} INFO - Output:
+[2026-10-07T12:59:53.410+0000] {subprocess.py:106} INFO - 2016-09-04
+[2026-10-07T12:59:53.411+0000] {subprocess.py:106} INFO - 2018-10-17
+[2026-10-07T12:59:53.412+0000] {subprocess.py:106} INFO -    full_date  date_key  day  month  ...  year  month_name day_of_week   day_name
+[2026-10-07T12:59:53.412+0000] {subprocess.py:106} INFO - 0 2016-09-04  20160904    4      9  ...  2016   September           7     Sunday
+[2026-10-07T12:59:53.416+0000] {subprocess.py:106} INFO - 1 2016-09-05  20160905    5      9  ...  2016   September           1     Monday
+[2026-10-07T12:59:53.417+0000] {subprocess.py:106} INFO - 2 2016-09-06  20160906    6      9  ...  2016   September           2    Tuesday
+[2026-10-07T12:59:53.418+0000] {subprocess.py:106} INFO - 3 2016-09-07  20160907    7      9  ...  2016   September           3  Wednesday
+[2026-10-07T12:59:53.419+0000] {subprocess.py:106} INFO - 4 2016-09-08  20160908    8      9  ...  2016   September           4   Thursday
+[2026-10-07T12:59:53.420+0000] {subprocess.py:106} INFO - 
+[2026-10-07T12:59:53.421+0000] {subprocess.py:106} INFO - [5 rows x 9 columns]
+[2026-10-07T12:59:53.422+0000] {subprocess.py:106} INFO - (774, 774, datetime.date(2016, 9, 4), datetime.date(2018, 10, 17))
+[2026-10-07T12:59:53.586+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-10-07T12:59:53.618+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-10-07T12:59:53.619+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=dim_date, run_id=scheduled__2026-10-06T02:00:00+00:00, execution_date=20261006T020000, start_date=20261007T125951, end_date=20261007T125953
+[2026-10-07T12:59:53.662+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-10-07T12:59:53.699+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-10-07T12:59:53.702+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
